@@ -4,6 +4,10 @@ import { useState } from "react"
 const Form = (props) => {
     const [formData, setFormData] = useState({})
     const [errors, setErrors] = useState([])
+    
+    const validate = () => {
+        return []
+    }
     /**
      * @param {SubmitEvent} evt 
      */
