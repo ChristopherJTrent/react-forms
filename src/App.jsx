@@ -1,5 +1,7 @@
+import Form from "./components/Form.jsx";
+
 function App() {
-  return <h1> Hello from App </h1>;
+  return <Form></Form>;
 }
 
 export default App;
