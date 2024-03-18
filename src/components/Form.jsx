@@ -25,20 +25,25 @@ const Form = (props) => {
      * @param {String} key 
      * @returns {(evt: import("react").ChangeEvent) => undefined}
      */
-    const handleChange = (key) => (evt) => {}
+    const handleChange = (key) => (evt) => {
+        setFormData((old) => ({...old, [key] : evt.target.value}))
+    }
+
     return <>
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} />
-            <input type="email" onChange={handleChange} />
-            <input type="tel" onChange={handleChange} />
+            <input type="text" onChange={handleChange("username")} />
+            <input type="email" onChange={handleChange("email")} />
+            <input type="tel" onChange={handleChange("telephone")} />
             {/*select element containing the 3 phone types*/}
-            <select onChange={handleChange}>
-                <option value=""></option>
+            <select onChange={handleChange("phoneType")}>
+                <option value="home">Home</option>
+                <option value="work">Work</option>
+                <option value="mobile">Mobile</option>
             </select>
             <input type="radio" name="" />
-            <textarea onChange={handleChange} cols="30" rows="10"></textarea>
-            <input type="checkbox" onChange={handleChange}/>
-            <button type="submit"></button>
+            <textarea onChange={handleChange("bio")} cols="30" rows="10"></textarea>
+            <input type="checkbox" onChange={handleChange("acceptNewsLetter")}/>
+            <button type="submit">Submit</button>
         </form>
     </>
 }
